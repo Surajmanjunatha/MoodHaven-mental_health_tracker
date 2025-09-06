@@ -1,0 +1,365 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to MindHaven brand color palette */
+  --background: #f9fafb; /* Mist White background */
+  --foreground: #111827; /* Primary text - high contrast dark gray */
+  --card: rgba(255, 255, 255, 0.25); /* Frosted glass effect for cards */
+  --card-foreground: #111827;
+  --popover: rgba(255, 255, 255, 0.9); /* Slightly opaque popover */
+  --popover-foreground: #111827;
+  --primary: #2cbfae; /* Harbor Teal primary */
+  --primary-foreground: #f9fafb;
+  --secondary: #1e3a5f; /* Deep Navy secondary */
+  --secondary-foreground: #f9fafb;
+  --muted: #f9fafb; /* Light muted background */
+  --muted-foreground: #6b7280; /* Secondary text - muted gray */
+  --accent: #a18cff; /* Soft Lavender accent */
+  --accent-foreground: #111827;
+  --destructive: #ff7e6b; /* Bright Coral for destructive actions */
+  --destructive-foreground: #f9fafb;
+  --border: rgba(107, 114, 128, 0.2); /* Soft border using muted gray */
+  --input: rgba(255, 255, 255, 0.9); /* Input fields with transparency */
+  --ring: rgba(44, 191, 174, 0.3); /* Harbor Teal focus ring */
+  --chart-1: #2cbfae; /* Harbor Teal */
+  --chart-2: #a18cff; /* Soft Lavender */
+  --chart-3: #ff7e6b; /* Bright Coral */
+  --chart-4: #1e3a5f; /* Deep Navy */
+  --chart-5: rgba(44, 191, 174, 0.7); /* Lighter Harbor Teal */
+  --radius: 0.75rem; /* Rounded corners for softer look */
+  --sidebar: rgba(255, 255, 255, 0.8); /* Frosted glass sidebar */
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #2cbfae;
+  --sidebar-primary-foreground: #f9fafb;
+  --sidebar-accent: #a18cff;
+  --sidebar-accent-foreground: #111827;
+  --sidebar-border: rgba(107, 114, 128, 0.2);
+  --sidebar-ring: rgba(44, 191, 174, 0.3);
+}
+
+.dark {
+  /* Enhanced dark mode with more vibrant and visually appealing colors */
+  --background: #0a0f1c; /* Deeper, richer dark background */
+  --foreground: #e2e8f0; /* Softer light text with slight blue tint */
+  --card: rgba(15, 23, 42, 0.85); /* More opaque dark frosted glass */
+  --card-foreground: #f1f5f9;
+  --popover: rgba(15, 23, 42, 0.95);
+  --popover-foreground: #f1f5f9;
+  --primary: #22d3ee; /* Brighter cyan for better dark mode visibility */
+  --primary-foreground: #0a0f1c;
+  --secondary: #3b82f6; /* Vibrant blue secondary */
+  --secondary-foreground: #f1f5f9;
+  --muted: rgba(51, 65, 85, 0.4); /* Warmer muted background */
+  --muted-foreground: #94a3b8; /* Lighter muted text */
+  --accent: #c084fc; /* Brighter purple accent for dark mode */
+  --accent-foreground: #0a0f1c;
+  --destructive: #f87171; /* Softer red for dark mode */
+  --destructive-foreground: #f1f5f9;
+  --border: rgba(148, 163, 184, 0.2); /* Lighter border for better visibility */
+  --input: rgba(51, 65, 85, 0.6); /* More visible input background */
+  --ring: rgba(34, 211, 238, 0.5); /* Brighter focus ring */
+  --chart-1: #22d3ee; /* Bright cyan */
+  --chart-2: #c084fc; /* Bright purple */
+  --chart-3: #f87171; /* Soft red */
+  --chart-4: #3b82f6; /* Vibrant blue */
+  --chart-5: rgba(34, 211, 238, 0.8); /* Lighter cyan */
+  --sidebar: rgba(15, 23, 42, 0.9);
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: #22d3ee;
+  --sidebar-primary-foreground: #0a0f1c;
+  --sidebar-accent: rgba(51, 65, 85, 0.8);
+  --sidebar-accent-foreground: #f1f5f9;
+  --sidebar-border: rgba(148, 163, 184, 0.3);
+  --sidebar-ring: rgba(34, 211, 238, 0.5);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground text-teal-600;
+    /* Adding colorful gradient background with white, green, teal, and blue */
+    background: linear-gradient(
+      135deg,
+      rgba(249, 250, 251, 0.95) 0%,
+      rgba(16, 185, 129, 0.1) 20%,
+      rgba(6, 182, 212, 0.15) 40%,
+      rgba(34, 197, 94, 0.08) 60%,
+      rgba(14, 165, 233, 0.12) 80%,
+      rgba(249, 250, 251, 0.95) 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+  }
+
+  .dark body {
+    /* Enhanced dark mode gradient with more vibrant and cosmic colors */
+    background: linear-gradient(
+      135deg,
+      rgba(10, 15, 28, 0.98) 0%,
+      rgba(30, 41, 59, 0.3) 15%,
+      rgba(59, 130, 246, 0.15) 30%,
+      rgba(192, 132, 252, 0.1) 45%,
+      rgba(34, 191, 238, 0.12) 60%,
+      rgba(15, 23, 42, 0.25) 75%,
+      rgba(10, 15, 28, 0.98) 100%
+    );
+    backdrop-filter: blur(16px) saturate(150%);
+    @apply text-cyan-300;
+  }
+
+  /* Enhanced frosted glass effects with more transparency and interactivity */
+  .frosted-glass {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl;
+    backdrop-filter: blur(20px) saturate(180%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .frosted-glass:hover {
+    @apply bg-white/15 border-white/30 shadow-2xl scale-[1.02];
+    backdrop-filter: blur(24px) saturate(200%);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  /* More interactive glass modules with colorful hover effects */
+  .glass-module {
+    @apply backdrop-blur-2xl bg-white/8 border border-white/15 shadow-lg;
+    backdrop-filter: blur(24px) saturate(200%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-module:hover {
+    @apply bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 border-primary/30;
+    backdrop-filter: blur(28px) saturate(220%);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 40px rgba(44, 191, 174, 0.3);
+    animation: gentle-float 0.6s ease-out;
+  }
+
+  .glass-overlay {
+    @apply backdrop-blur-sm bg-white/5 border border-white/10;
+    backdrop-filter: blur(8px) saturate(150%);
+    transition: all 0.3s ease;
+  }
+
+  .glass-overlay:hover {
+    @apply bg-white/8 border-white/15;
+    backdrop-filter: blur(12px) saturate(170%);
+  }
+
+  /* Smooth transitions without constant animations */
+  .gentle-fade {
+    @apply transition-all duration-700 ease-out;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-400 ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Hover-only float animation */
+  @keyframes gentle-float {
+    0% {
+      transform: translateY(-4px) scale(1.02);
+    }
+    50% {
+      transform: translateY(-8px) scale(1.025);
+    }
+    100% {
+      transform: translateY(-4px) scale(1.02);
+    }
+  }
+
+  /* Static gradient text, animated only on hover */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-accent to-blue-500 bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    transition: background-position 0.8s ease;
+  }
+
+  .gradient-text:hover {
+    background-position: 100% 50%;
+    animation: gradient-pulse 1.5s ease-in-out;
+  }
+
+  @keyframes gradient-pulse {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Hover-only glow effects */
+  .interactive-glow {
+    transition: all 0.4s ease;
+  }
+
+  .interactive-glow:hover {
+    animation: hover-glow 0.8s ease-out;
+  }
+
+  @keyframes hover-glow {
+    0% {
+      box-shadow: 0 0 0 rgba(44, 191, 174, 0);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(44, 191, 174, 0.4), 0 0 60px rgba(161, 140, 255, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(44, 191, 174, 0.3), 0 0 40px rgba(161, 140, 255, 0.1);
+    }
+  }
+
+  /* Hover-only shimmer effect */
+  .interactive-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .interactive-shimmer:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer-sweep 1.2s ease-out;
+  }
+
+  @keyframes shimmer-sweep {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Enhanced dark mode hover interactions */
+  .dark .frosted-glass {
+    @apply backdrop-blur-xl bg-slate-800/20 border border-slate-600/30 shadow-lg;
+    backdrop-filter: blur(24px) saturate(180%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark .frosted-glass:hover {
+    @apply bg-slate-700/25 border-cyan-400/40;
+    backdrop-filter: blur(28px) saturate(200%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(34, 191, 238, 0.2);
+  }
+
+  .dark .glass-module {
+    @apply backdrop-blur-2xl bg-slate-800/15 border border-slate-600/25 shadow-lg;
+    backdrop-filter: blur(28px) saturate(200%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark .glass-module:hover {
+    @apply bg-gradient-to-br from-cyan-500/15 via-purple-500/10 to-blue-500/15 border-cyan-400/40;
+    backdrop-filter: blur(32px) saturate(220%);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.4), 0 0 50px rgba(34, 191, 238, 0.3);
+    animation: gentle-float 0.6s ease-out;
+  }
+
+  /* Dark mode hover-only gradient text */
+  .dark .gradient-text {
+    @apply bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    transition: background-position 0.8s ease;
+  }
+
+  .dark .gradient-text:hover {
+    background-position: 100% 50%;
+    animation: dark-gradient-pulse 1.5s ease-in-out;
+  }
+
+  @keyframes dark-gradient-pulse {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Dark mode hover-only glow effects */
+  .dark .interactive-glow:hover {
+    animation: dark-hover-glow 0.8s ease-out;
+  }
+
+  @keyframes dark-hover-glow {
+    0% {
+      box-shadow: 0 0 0 rgba(34, 191, 238, 0);
+    }
+    50% {
+      box-shadow: 0 0 35px rgba(34, 191, 238, 0.5), 0 0 70px rgba(192, 132, 252, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 25px rgba(34, 191, 238, 0.4), 0 0 50px rgba(192, 132, 252, 0.2);
+    }
+  }
+
+  /* Dark mode hover-only shimmer */
+  .dark .interactive-shimmer:hover::before {
+    background: linear-gradient(90deg, transparent, rgba(34, 191, 238, 0.4), rgba(192, 132, 252, 0.3), transparent);
+  }
+}
