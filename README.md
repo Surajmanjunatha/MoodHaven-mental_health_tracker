@@ -1,30 +1,55 @@
-# mental sentiment tracker app
+🧘 Mind Haven — Your AI-powered companion for understanding, tracking, and improving mental wellness, privately and beautifully.
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Mind Haven is a modern, AI-powered platform that helps users track and improve their mental wellness through mood monitoring, intelligent journaling, and personalized insights — all in a private, calming, and engaging environment.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/surajforpersonal-9460s-projects/v0-mood-tracker-app)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/nbRmOCLEWD8)
+🚀 Key Objectives
 
-## Overview
+Emotional Awareness – Understand emotional patterns and triggers
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+Consistent Tracking – Daily mood logging with visual analytics
 
-## Deployment
+AI Insights – Personalized coping strategies and early warnings
 
-Your project is live at:
+Privacy & Accessibility – A judgment-free, easy-to-use interface
+
+🛠️ Core Features
+
+Mood Tracking & Analytics – 1–10 mood scale with emojis, trend charts, emotion distribution
+
+AI-Powered Journal – Sentiment analysis, mood summaries, GPT-powered personal assistant
+
+Coping Tools – Affirmations, breathing exercises, curated resources
+
+Security & Privacy – Local storage, anonymous usage, secure authentication
+
+Beautiful UX – Frosted glass design, calming gradients, dark/light mode, smooth animations
+
+💻 Tech Stack
+
+Frontend: Next.js 15 (React 18, TypeScript, App Router)
+
+Design & UI: Tailwind CSS, Framer Motion, Radix UI, Shadcn/UI
+
+AI & Analytics: Vercel AI SDK, OpenAI GPT-4, Recharts
+
+Data & State: React Hooks, SWR, Local Storage
+
+Deployment: Vercel (serverless, edge-optimized)
+
+🏗️ Architecture Highlights
+
+Performance: Server Components + edge deployment = fast load times
+
+Scalability: Serverless auto-scaling without database overhead
+
+Maintainability: Component-based architecture + utility CSS
+
+Privacy-First: No server-side data storage; user data stays local
+
+Mind Haven blends cutting-edge AI with thoughtful UX to offer proactive mental wellness support — helping users detect patterns, gain insights, and nurture mental health in a safe, private space.
+
+the project is live at:
 
 **[https://vercel.com/surajforpersonal-9460s-projects/v0-mood-tracker-app](https://vercel.com/surajforpersonal-9460s-projects/v0-mood-tracker-app)**
 
-## Build your app
 
-Continue building your app on:
-
-**[https://v0.app/chat/projects/nbRmOCLEWD8](https://v0.app/chat/projects/nbRmOCLEWD8)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
